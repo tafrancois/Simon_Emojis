@@ -1398,7 +1398,7 @@
         function generate() {
             selectedEmojis = getRandomItems(getAllKeys(), 15);
             simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, 8);
-            selectedWords = getRandomItems(WORD_BANK, 15);
+            selectedWords = getRandomItems(WORD_BANK, 7);
             // Clear sort bins + groups + yes/no/maybe on regenerate (fresh slate per pull)
             currentBins = { relevant: [], tbd: [], noise: [] };
             similarityGroups = [];
