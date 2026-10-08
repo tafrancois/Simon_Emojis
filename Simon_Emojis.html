@@ -263,6 +263,9 @@
         }
 
         .hidden { display: none; }
+        .header-btns { display: flex; gap: 0.4rem; flex-shrink: 0; }
+        .regen-btn { background: #a855f7; }
+        .regen-btn:active { background: #7e22ce; }
 
         /* ============ NEW: CLEAR BUTTON ============ */
         .clear-btn { background: #94a3b8; }
@@ -571,7 +574,10 @@
             <div class="section">
                 <div class="section-header">
                     <h2 class="section-title">🎭 Emojis</h2>
-                    <button class="copy-btn" onclick="copyList(this)">📋 Copy List</button>
+                    <div class="header-btns">
+                        <button class="copy-btn regen-btn" onclick="regenerateMain()">🎲 Regen</button>
+                        <button class="copy-btn" onclick="copyList(this)">📋 Copy</button>
+                    </div>
                 </div>
                 <div id="emoji-grid" class="emoji-grid"></div>
             </div>
@@ -580,7 +586,10 @@
             <div class="section">
                 <div class="section-header">
                     <h2 class="section-title">🔴 Simon's Channel</h2>
-                    <button class="copy-btn" onclick="copySimonList(this)">📋 Copy List</button>
+                    <div class="header-btns">
+                        <button class="copy-btn regen-btn" onclick="regenerateSimon()">🎲 Regen</button>
+                        <button class="copy-btn" onclick="copySimonList(this)">📋 Copy</button>
+                    </div>
                 </div>
                 <div id="simon-grid" class="emoji-grid"></div>
             </div>
@@ -589,7 +598,10 @@
             <div class="section">
                 <div class="section-header">
                     <h2 class="section-title">📝 Words</h2>
-                    <button class="copy-btn" onclick="copyWordsList(this)">📋 Copy List</button>
+                    <div class="header-btns">
+                        <button class="copy-btn regen-btn" onclick="regenerateWords()">🎲 Regen</button>
+                        <button class="copy-btn" onclick="copyWordsList(this)">📋 Copy</button>
+                    </div>
                 </div>
                 <div id="words-grid" class="emoji-grid"></div>
             </div>
@@ -1418,6 +1430,32 @@
                 autoGrow(notesEl);
             }
             document.getElementById('results').classList.remove('hidden');
+        }
+
+        // Drop group selections tied to a pool's old indices, then refresh group UI
+        function clearPoolSelections(pool) {
+            Array.from(selectedForGrouping).forEach(k => {
+                if (k.startsWith(pool + ':')) selectedForGrouping.delete(k);
+            });
+            updateGroupButton();
+        }
+
+        function regenerateMain() {
+            selectedEmojis = getRandomItems(getAllKeys(), 15);
+            clearPoolSelections('main');
+            displayEmojis();
+        }
+
+        function regenerateSimon() {
+            simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, 8);
+            clearPoolSelections('simon');
+            displayEmojis();
+        }
+
+        function regenerateWords() {
+            selectedWords = getRandomItems(WORD_BANK, 7);
+            clearPoolSelections('words');
+            displayWords();
         }
 
         function clearPrompt() {
