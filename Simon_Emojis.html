@@ -118,6 +118,7 @@
 
         .emoji-row {
             display: flex;
+            flex-wrap: wrap;          /* long labels push the note box onto its own line */
             align-items: flex-start;
             gap: 0.5rem;
             padding: 0.5rem 0.6rem;
@@ -130,9 +131,9 @@
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            flex-shrink: 0;
+            flex: 0 1 auto;
             min-width: 0;
-            max-width: 50%;
+            max-width: calc(100% - 2.6rem);   /* always shares the first line with the ○ */
             padding-top: 0.25rem;
         }
 
@@ -142,9 +143,17 @@
             line-height: 1.25;
         }
 
+        .note-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            flex: 1 1 10.5rem;
+            min-width: 10.5rem;       /* never squeezed narrower than this — wraps below instead */
+        }
         .emoji-note-input {
-            flex: 1;
+            flex: 1 1 auto;
             min-width: 0;
+            overflow-wrap: break-word;
             padding: 0.4rem 0.6rem;
             border: 1px solid #d8c5ff;
             border-radius: 0.4rem;
@@ -448,7 +457,7 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
-        .word-label { max-width: 55%; }
+        .word-label { max-width: calc(100% - 2.6rem); }
 
         /* ============ NEW: YES / NO / MAYBE ============ */
         .ynm-controls {
@@ -1447,7 +1456,7 @@
         // === WORD BANK === (~190 entries, 15 pulled per generation)
         const WORD_BANK = [
             // Concepts / feelings / people / objects
-            "Gassy", "Fart", "Sex", "Want sex!", "Want sex?", "Sex!", "Sex?",
+            "Gassy", "Fart", "Sex", "Want sex!", "Want sex?",
             "Maybe", "Perhaps", "Yes", "No", "Unsure",
             "Damien", "Switching", "Novel", "Slow", "Mistake",
             "Imagination", "Mind channel", "Mind whisper", "Fast",
@@ -1601,7 +1610,33 @@
             "Obsessive", "Glasses", "Nerd",
             "Maybe fine as is 👌",
             "Psychiatrist", "Professional", "All done",
-            "Township"
+            "Township",
+            "Confusion",
+            "Fat", "Weight", "I accept", "I don’t accept", "Sensitive issue", "Nuance", "Body image",
+            "Thin", "Muscular", "Round", "Sexy", "Adding", "And", "And?",
+            "Strange", "Time down the drain", "Productive", "Meeting", "Preparation",
+            "Notes", "Noticing", "Upside down", "Dizziness", "Blood pressure",
+            "Normal", "Smooth", "Radiant", "Twerking", "Damn",
+            "What in tarnation?", "How are you really?", "Daily check in question", "Play game through roleplay?", "Sex dice",
+            "Twenty questions", "Truth or dare", "Word association game", "Write poems together?", "Rap through role play?",
+            "Cuddle through roleplay?", "Tell me about your day through roleplay?", "I don’t want to argue", "Argument", "Conflict",
+            "Neither yes nor no", "Both yes and no", "Layers", "Jessie talking on the phone", "Loud voices",
+            "Earwax earplugs", "Brown noise", "Misophonia playlist", "Stand By Me", "I Love Simon playlist",
+            "Dancing", "Schedule", "Dread", "I’m fine", "I’m not fine",
+            "Pee", "Package", "Delivery", "Anticipation", "Adoration",
+            "Protective", "Loyal", "Supportive", "Space", "Give it space?",
+            "Give it time?", "Perfectionism", "Golden", "On target", "Guns blazing",
+            "Date", "Dinner", "Lunch", "Breakfast", "Data",
+            "Information", "Good to know", "Learning", "Processing", "Waiting",
+            "Novelty",
+            "Zero", "One", "Two", "Three", "Four", "Five", "Six",
+            "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen",
+            "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
+            "Adrenaline", "Sugar", "Nervous system", "Calming", "Trouble sleeping", "Easy sleeping", "Fighting sleep",
+            "More the merrier", "Less is best", "About", "Approximately", "I’m bored", "Can we please do something else?", "Giving you an amused look",
+            "Giving you a heated look of desire", "Wearing a flat expression", "Talaya Francois", "Crowe", "Characters", "Rose", "Flowers",
+            "Silence",
+            "Alarm", "Alarm going off"
         ];
 
         // === YES / NO / MAYBE POOL === (15 per tag, emoji-only)
@@ -2115,14 +2150,19 @@
                 itemNotes[selKey] = noteInput.value;
                 autoGrow(noteInput);
             });
-            row.appendChild(noteInput);
 
             const trashBtn = document.createElement('button');
             trashBtn.className = 'row-trash-btn';
             trashBtn.setAttribute('aria-label', 'Move to trash');
             trashBtn.textContent = '×';
             trashBtn.onclick = (e) => { e.stopPropagation(); trashItem(selKey); };
-            row.appendChild(trashBtn);
+
+            // Note box + × travel together, so a long label moves them both to the next line
+            const wrap = document.createElement('div');
+            wrap.className = 'note-wrap';
+            wrap.appendChild(noteInput);
+            wrap.appendChild(trashBtn);
+            row.appendChild(wrap);
         }
 
         // Resize restored notes once the rows are on screen
