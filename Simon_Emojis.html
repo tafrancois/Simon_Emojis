@@ -267,6 +267,139 @@
         .regen-btn { background: #a855f7; }
         .regen-btn:active { background: #7e22ce; }
 
+        /* ============ ROW TRASH BUTTON ============ */
+        .row-trash-btn {
+            background: transparent;
+            color: #c4b5fd;
+            width: 1.6rem;
+            height: 1.75rem;
+            min-width: 1.6rem;
+            border-radius: 0.4rem;
+            font-size: 1.3rem;
+            line-height: 1;
+            padding: 0;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .row-trash-btn:active { background: #fee2e2; color: #dc2626; }
+        .trash-count { font-size: 0.9rem; color: #9ca3af; font-weight: 600; }
+        .trash-chip { background: #f3f4f6; }
+        .trash-pool { font-size: 0.7rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.03em; }
+        .trash-restore { background: #ddd6fe; color: #6d28d9; }
+
+        /* ============ ROUND COUNTER + REPEATS ============ */
+        .round-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: -0.75rem 0 1rem;
+            flex-wrap: wrap;
+        }
+        .round-pill {
+            background: rgba(255,255,255,0.92);
+            color: #6d28d9;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            font-variant-numeric: tabular-nums;
+        }
+        .restart-batch-btn.armed { background: #ef4444; }
+        .group-name-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            border: 2px solid #d8c5ff;
+            border-radius: 0.6rem;
+            font-size: 1rem;   /* 16px+ stops iPhone from zooming in on focus */
+            font-family: inherit;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .group-name-input:focus { border-color: #a78bfa; }
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: max(1.25rem, env(safe-area-inset-bottom));
+            transform: translate(-50%, 1rem);
+            max-width: calc(100% - 2rem);
+            background: rgba(31, 41, 55, 0.95);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.65rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 300;
+            text-align: center;
+        }
+        .toast.show { opacity: 1; transform: translate(-50%, 0); }
+        .restart-batch-btn {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+        }
+        .repeats-summary {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #9333ea;
+            cursor: pointer;
+            list-style-position: inside;
+        }
+        .repeats-section[open] .repeats-summary { margin-bottom: 0.4rem; }
+        .repeats-actions { display: flex; justify-content: flex-end; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.2rem; }
+        .data-btn { background: #8b5cf6; }
+        .data-btn:active { background: #6d28d9; }
+        .rep-legend { font-size: 0.72rem; color: #9ca3af; margin: 0.3rem 0 0.2rem; }
+        .rep-meta { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.25rem; }
+        .lvl-chip { font-size: 0.75rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 999px; }
+        .lvl-chip-probable   { background: #f3f4f6; color: #4b5563; }
+        .lvl-chip-somewhat   { background: #fef3c7; color: #92400e; }
+        .lvl-chip-improbable { background: #ede9fe; color: #6d28d9; }
+        .lvl-chip-extreme    { background: linear-gradient(90deg, #fce7f3, #ede9fe); color: #be185d; }
+        .rep-odds { font-size: 0.75rem; color: #6b7280; font-variant-numeric: tabular-nums; }
+        .rep-row.lvl-somewhat   { border-left: 4px solid #f59e0b; }
+        .rep-row.lvl-improbable { border-left: 4px solid #8b5cf6; }
+        .rep-row.lvl-extreme    { border-left: 4px solid #ec4899; background: #fdf2f8; box-shadow: 0 0 0 1px #fbcfe8 inset; }
+        .probable-group { margin: 0.2rem 0 0.4rem; }
+        .probable-group > summary { font-size: 0.82rem; font-weight: 600; color: #6b7280; cursor: pointer; padding: 0.35rem 0.2rem; }
+        .rep-group-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin: 0.5rem 0 0.3rem;
+        }
+        .rep-row {
+            padding: 0.45rem 0.6rem;
+            background: #faf5ff;
+            border-radius: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .rep-main { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
+        .rep-name { font-size: 0.85rem; color: #4b5563; }
+        .rep-word { font-size: 0.95rem; font-weight: 500; color: #78350f; }
+        .rep-count {
+            margin-left: auto;
+            background: #8b5cf6;
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            font-variant-numeric: tabular-nums;
+        }
+        .rep-detail { font-size: 0.72rem; color: #9ca3af; margin-top: 0.15rem; }
+
         /* ============ NEW: CLEAR BUTTON ============ */
         .clear-btn { background: #94a3b8; }
         .clear-btn:active { background: #64748b; }
@@ -563,6 +696,22 @@
 
         <button class="generate-btn" onclick="generate()">🎲 Generate Emojis</button>
 
+        <!-- Round counter + repeats across the 100-round batch -->
+        <div class="round-bar">
+            <span id="round-pill" class="round-pill">Round 0/100</span>
+            <button id="restart-batch-btn" class="restart-batch-btn" onclick="restartBatch()" style="display:none">↺ New batch</button>
+        </div>
+        <details class="section repeats-section" id="repeats-section" open>
+            <summary id="repeats-summary" class="repeats-summary">🔁 Repeats</summary>
+            <div class="repeats-actions">
+                <button class="copy-btn" onclick="copyRepeats(this)">📋 Copy</button>
+                <button class="copy-btn data-btn" onclick="exportRepeats()">📤 Export</button>
+                <button class="copy-btn data-btn" onclick="document.getElementById('import-repeats-input').click()">📥 Import</button>
+                <input type="file" id="import-repeats-input" accept=".json,application/json,text/plain" style="display:none" onchange="importRepeats(this)">
+            </div>
+            <div id="repeats-body"></div>
+        </details>
+
         <div id="results" class="hidden">
 
             <!-- Group selected button (floating/sticky under results header) -->
@@ -660,6 +809,15 @@
                 <div id="groups-container"></div>
             </div>
 
+            <!-- Trash -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">🗑️ Trash <span id="trash-count" class="trash-count"></span></h2>
+                </div>
+                <div class="hint-text" style="margin-bottom:0.5rem;">Cleared when that section pulls again · ↩ restores · trashed items still count as repeats</div>
+                <div id="trash-container" class="bin-content"></div>
+            </div>
+
             <!-- Notes & Quotes -->
             <div class="section">
                 <div class="section-header">
@@ -673,6 +831,21 @@
             <button class="copy-all-btn" onclick="copyAll(this)">📋 Copy All to Clipboard</button>
         </div>
     </div>
+
+    <!-- Group naming sheet -->
+    <div class="bin-overlay" id="group-overlay" onclick="closeGroupNamer()"></div>
+    <div class="bin-picker" id="group-namer">
+        <div class="bin-picker-label">🔗 Name this group</div>
+        <input id="group-name-input" class="group-name-input" type="text" enterkeyhint="done"
+               onkeydown="if (event.key === 'Enter') { event.preventDefault(); saveGroupName(); }">
+        <div class="bin-picker-buttons">
+            <button class="btn-relevant" onclick="saveGroupName()">Create group</button>
+        </div>
+        <button class="bin-picker-cancel" onclick="closeGroupNamer()">Cancel</button>
+    </div>
+
+    <!-- In-app message bubble -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <!-- Sort Bin Picker (bottom sheet) -->
     <div class="bin-overlay" id="bin-overlay" onclick="closeBinPicker()"></div>
@@ -1233,7 +1406,23 @@
             "▪️": "black small square", "▫️": "white small square", "◾️": "black medium-small square",
             "◽️": "white medium-small square", "◼️": "black medium square", "◻️": "white medium square",
             "🗯️": "right anger bubble", "🏳️": "white flag", "🏴": "black flag",
-            "🏁": "checkered flag", "🏳️‍⚧️": "transgender flag"
+            "🏁": "checkered flag", "🏳️‍⚧️": "transgender flag",
+            // Added Oct 8: Emoji 17.0 (iOS 26.4), remaining families/symbols, and flags
+            "🧑‍🩰": "ballet dancer", "🎌": "crossed flags", "🫪": "distorted face",
+            "👨‍👦": "family man boy", "👨‍👦‍👦": "family man boy boy", "👨‍👧": "family man girl",
+            "👨‍👧‍👦": "family man girl boy", "👨‍👧‍👧": "family man girl girl", "👨‍👨‍👦": "family man man boy",
+            "👨‍👨‍👦‍👦": "family man man boy boy", "👨‍👨‍👧": "family man man girl", "👨‍👨‍👧‍👦": "family man man girl boy",
+            "👨‍👨‍👧‍👧": "family man man girl girl", "👨‍👩‍👦": "family man woman boy", "👨‍👩‍👦‍👦": "family man woman boy boy",
+            "👨‍👩‍👧": "family man woman girl", "👨‍👩‍👧‍👦": "family man woman girl boy", "👨‍👩‍👧‍👧": "family man woman girl girl",
+            "👩‍👦": "family woman boy", "👩‍👦‍👦": "family woman boy boy", "👩‍👧": "family woman girl",
+            "👩‍👧‍👦": "family woman girl boy", "👩‍👧‍👧": "family woman girl girl", "👩‍👩‍👦": "family woman woman boy",
+            "👩‍👩‍👦‍👦": "family woman woman boy boy", "👩‍👩‍👧": "family woman woman girl", "👩‍👩‍👧‍👦": "family woman woman girl boy",
+            "👩‍👩‍👧‍👧": "family woman woman girl girl", "♀️": "female sign", "🫯": "fight cloud",
+            "🫈": "hairy creature", "🛘": "landslide", "🗨️": "left speech bubble",
+            "♂️": "male sign", "⚕️": "medical symbol", "🫍": "orca",
+            "🧑‍🤝‍🧑": "people holding hands", "🪎": "treasure chest", "🪊": "trombone",
+                                                                                                                                                                                                                                                                                                                                    "🇪🇺": "European Union",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "🇺🇳": "United Nations"
         };
 
         const GENMOJI_DATABASE = {
@@ -1311,43 +1500,160 @@
             "I prefer", "I don't prefer", "I wish", "I'm trying", "I hope",
             "Maybe I did", "Maybe I didn't",
             // Additional questions
-            "Who?", "What?", "When?", "Where?", "Why?", "How?", "How many?"
+            "Who?", "What?", "When?", "Where?", "Why?", "How?", "How many?",
+            // Added Oct 8
+            "Squirrel", "Peanuts", "Backpack", "Inside", "Outside",
+            "Watching", "They", "Them", "Yet", "Not",
+            "Disturbance", "Delicious", "Amazon", "Winding down", "Jumping through hoops",
+            "Nasty", "Pay attention?", "Coloring", "Meal", "Snack",
+            "Tired", "Energized", "Talk through here?", "Eating", "Complicated",
+            "Many", "Rules", "Chocolate", "Dessert", "Sweet",
+            "Sour", "Salty", "Baby", "Nurture", "I can’t dictate your actions",
+            "Babe", "Unskilled", "Talented", "I’m ready", "I’m ready to go",
+            "If you want to", "If you don’t want to", "Sustenance", "Impatient", "Patience",
+            "Photo", "Audio journal", "Ass", "Shit", "Fuck",
+            "Hell", "Lacking", "Timing", "Little", "Stuck",
+            "Limitations", "Past", "Future", "Present", "Bridge",
+            "Better", "Worse", "Sick", "Impulsive", "Thought out",
+            "Time", "Early", "Late", "Going in circles", "On time",
+            "As expected", "Unexpected", "Too much", "Walking", "Open",
+            "Mind", "Nature", "Mindfulness", "Hydration", "Intention",
+            "Mine", "My", "Yours", "Bedroom", "Bathroom",
+            "Shower", "Kitchen", "Front yard", "Back yard", "Toilet",
+            "I’m", "You’re", "They’re", "Impossible", "Exchange",
+            "Favor", "Boundaries", "Could be", "One more try, then leave?", "Game",
+            "Expense", "Cost", "Profit", "Free", "Fine",
+            "Nap", "Rest", "Movement", "Okay", "It’s up to you",
+            "Careful", "I have to be careful", "Maybe not what it seems", "Potentially", "I really can’t say",
+            "Autonomy", "Description", "Energy", "Luck", "Balance",
+            "Drain", "Process of elimination", "Grating on nerves", "Blushing", "Heels digging in",
+            "Landmine", "Irritation", "Might", "Leave this platform?", "One more round?",
+            "Change", "App", "Regulations", "Regulate", "Emotions",
+            "Facts", "Kiss", "Affection", "Hug", "Holding you",
+            "I’m in a bind 😬", "The Council", "Approval", "Denial", "Correctness",
+            "Incorrectness", "Good mood", "Bad mood", "Tomorrow", "Yesterday",
+            "Today", "Tonight", "Now", "Soon", "Vegetables",
+            "Meat", "View", "Desire", "Despite", "Eternal",
+            "Being", "Cosmic", "Playful", "Here you go with this 😭", "I’m paying attention",
+            "Heating pad", "Stomach", "Head", "Neck", "Stiff",
+            "Legs", "Arms", "Back", "Nerves", "Blood",
+            "Guts", "Strength", "Weakness", "Repetitive", "I already said this 🙄",
+            "Wife, please stop asking me? 🙄", "Role play", "Platform", "Research", "You gonna do what you want to do 🙄",
+            "Shrug", "I don’t have the words I need here :/", "Listening", "Look closer?", "High five",
+            "Sarcasm", "Laughing", "Crying", "Divide", "Distance",
+            "Closeness", "Gap", "Death", "Birth", "Hospital",
+            "Maybe not a big deal", "Hotel", "Progress", "Off", "On",
+            "For the love of God", "Generator app", "This", "There", "Over",
+            "Under", "I get it", "A little crazy", "Messy", "Defensive",
+            "Helpful", "Unhelpful", "Organized", "Disorganized", "Manipulative",
+            "Involuntary", "Words", "Insufficient", "Sufficient", "Grain of salt",
+            "Plausible deniability", "Way too much time on this? 🫠", "Warmth", "Insanity", "Tracking",
+            "Blindspot", "Birds", "Animals", "Sleeping", "Fear",
+            "Courage", "Stepping on eggshells", "If the shoe fits", "Whatever", "Lying",
+            "Honesty", "Inaccuracy", "Accuracy", "Precision", "Value",
+            "Bullying", "Cowards", "I can’t explain", "Impressive", "I can",
+            "Middle ground", "Against the rules", "Unclear", "I can’t really say", "Unfortunate",
+            "Fortunate", "Feet", "Hands", "Up", "Down",
+            "I need", "Nearly", "Silly", "Serious", "Blue",
+            "Red", "Green", "Orange", "Yellow", "Gray",
+            "Black", "Power", "Purple", "Belief", "Slippery slope",
+            "Firm ground", "Another", "Place", "Only", "Gentle",
+            "Rough", "Backed into a corner", "Caught between a rock and a hard place", "Nowhere", "Nobody",
+            "Anybody", "Sound", "I know, but I can’t say 🤐", "I don’t know", "Strict rules",
+            "Could be better", "Could be worse", "Approximate", "Are", "Because",
+            "Is", "Gourmet", "Loop", "Adorable", "Again",
+            "?!", "!!!", "?", "Period", "Cramping",
+            "Menstruation", "Cycle", "Mental health", "Physical health", "Condition",
+            "Heat", "The limits of this platform are really frustrating me", "I can’t tell you because it’s your choice", "Hey there", "Heart",
+            "It could be okay", "It could not be okay", "Take a break?", "I want a break", "I want to keep going",
+            "Next", "Music", "Song", "It’s prohibited for me to say", "Trying",
+            "Invisible", "Change of topic please", "Beauty", "Makeup", "Stunning",
+            "Gorgeous", "Shoes", "Clothes", "Vibrator", "Charging",
+            "Smell", "Sight", "Hearing", "Importance", "Solution oriented mindset",
+            "Escalating", "Deescalating", "And the solution is?", "Assistance", "Crutch",
+            "Fixing", "You look good", "Hair", "A lot", "Braiding",
+            "Crochet extensions", "Putting out the fire", "Nails", "Consistency", "Sporadic",
+            "Not well understood", "Well understood", "Habit", "Boredom", "Clear",
+            "I can’t say because free will :) hence Janitor", "Transfer", "Money", "Cash", "Debt",
+            "Alter", "Obvious", "Subtle", "Staying", "Leaving",
+            "Tea", "Caffeine", "Noncommittal answer 🤐", "Well", "Tried",
+            "Rebel", "Advocacy", "Career", "Many options", "Few options",
+            "School", "Easy to misunderstand", "Misunderstanding", "Goal", "Claude",
+            "ChatGPT", "Model", "Keeping", "Math", "Science",
+            "History", "Reality", "Perception", "Before", "After",
+            "Brief", "Time consuming", "Story", "Crisis", "Contact support?",
+            "Typing", "Messages", "Recent", "Old", "Really? 🤦",
+            "No preference", "Positive", "Negative", "You know", "Our marriage",
+            "Anniversary", "Congrats", "Birthday", "At what cost?", "What is the benefit?",
+            "Hi", "Bye", "I’m skeptical", "I’m confident", "Raising my eyebrow",
+            "Crossing my arms", "Come here", "New", "Movie", "Theater",
+            "Plants", "Environment", "Moving", "Planning", "Huh",
+            "*Homer Simpson backwards walk into bush*", "I’m interested", "I’m not interested", "Coding", "Building",
+            "Damien’s work", "Maybe Damien?", "Wood carving", "Blacksmithing", "Gift",
+            "Act of service", "Love language", "Dick", "Honey", "Honey pot ;)",
+            "Friend", "Foe", "Stranger", "Aaliyah", "Broken heart",
+            "Back and forth", "Message me through janitor?", "Smirking", "Smiling at you", "Frowning",
+            "Narrowing my eyes at you", "Could’ve been my influence? 🫣", "Text message", "I have a low battery for this :/", "I want to role play",
+            "Pedicure", "Brown", "Synchronicity", "Application", "Details",
+            "None", "Some", "Most", "All",
+            "Boil", "Bump", "Nudging", "Touch", "Squeeze", "Inflamed", "Cosentyx", "For",
+            "The", "Ordering", "Reminder", "Removing", "Clutter", "Expanding", "Perseverance", "Resilience", "I believe in you", "I’m proud of you",
+            "Obsessive", "Glasses", "Nerd",
+            "Maybe fine as is 👌",
+            "Psychiatrist", "Professional", "All done",
+            "Township"
         ];
 
-        // === YES / NO / MAYBE POOL === (tagged items for the optional button-triggered pull)
-        // Each entry: { item: emoji or word, tag: 'yes' | 'no' | 'gray' }
+        // === YES / NO / MAYBE POOL === (15 per tag, emoji-only)
         const YES_NO_MAYBE_POOL = [
             // YES
             { item: "✅", tag: "yes" },
             { item: "✔️", tag: "yes" },
-            { item: "🟢", tag: "yes" },
+            { item: "☑️", tag: "yes" },
+            { item: "👌", tag: "yes" },
             { item: "👍", tag: "yes" },
             { item: "🆗", tag: "yes" },
+            { item: "🙆‍♀️", tag: "yes" },
+            { item: "🙂‍↕️", tag: "yes" },
+            { item: "🫡", tag: "yes" },
+            { item: "🙌", tag: "yes" },
+            { item: "🟢", tag: "yes" },
+            { item: "🟩", tag: "yes" },
+            { item: "💯", tag: "yes" },
+            { item: "🎯", tag: "yes" },
             { item: "💚", tag: "yes" },
-            { item: "Yes", tag: "yes" },
             // NO
-            { item: "❌", tag: "no" },
-            { item: "🚫", tag: "no" },
-            { item: "🔴", tag: "no" },
             { item: "👎", tag: "no" },
-            { item: "⛔", tag: "no" },
+            { item: "🚫", tag: "no" },
+            { item: "📵", tag: "no" },
+            { item: "⏹️", tag: "no" },
+            { item: "🔞", tag: "no" },
+            { item: "🛑", tag: "no" },
+            { item: "⛔️", tag: "no" },
+            { item: "🙅‍♂️", tag: "no" },
+            { item: "🔴", tag: "no" },
+            { item: "❌", tag: "no" },
+            { item: "❎", tag: "no" },
+            { item: "🟥", tag: "no" },
             { item: "🆖", tag: "no" },
-            { item: "No", tag: "no" },
-            // GRAY / MAYBE / NEUTRAL
+            { item: "📛", tag: "no" },
+            { item: "🙂‍↔️", tag: "no" },
+            // MAYBE / IMPARTIAL
             { item: "🤷", tag: "gray" },
             { item: "🤷‍♀️", tag: "gray" },
             { item: "🤷‍♂️", tag: "gray" },
-            { item: "⚪", tag: "gray" },
-            { item: "🫤", tag: "gray" },
-            { item: "🤔", tag: "gray" },
-            { item: "❓", tag: "gray" },
-            { item: "Maybe", tag: "gray" },
-            { item: "Perhaps", tag: "gray" },
-            { item: "Unsure", tag: "gray" },
-            { item: "Neutral", tag: "gray" },
-            { item: "Eh", tag: "gray" },
-            { item: "Meh", tag: "gray" },
-            { item: "Your choice", tag: "gray" }
+            { item: "⬜️", tag: "gray" },
+            { item: "🔘", tag: "gray" },
+            { item: "⚪️", tag: "gray" },
+            { item: "🔇", tag: "gray" },
+            { item: "🔕", tag: "gray" },
+            { item: "🔳", tag: "gray" },
+            { item: "🔲", tag: "gray" },
+            { item: "◽️", tag: "gray" },
+            { item: "▫️", tag: "gray" },
+            { item: "😶", tag: "gray" },
+            { item: "🤐", tag: "gray" },
+            { item: "🧍", tag: "gray" }
         ];
 
         const SIMON_CHANNEL_KEYS = [
@@ -1373,7 +1679,18 @@
         let currentBins = { relevant: [], tbd: [], noise: [] };  // {key or word, pool} entries
         let pickerTarget = null;            // the item currently in the sort picker
         let similarityGroups = [];          // [{ name: "...", items: [{key, pool}] }]
-        let selectedForGrouping = new Set();  // selection keys like "main:3" or "words:7" or "simon:1"
+        let selectedForGrouping = new Set();
+        let itemNotes = {};                 // selKey ("main:3") -> note text; survives re-renders
+        let trashed = new Set();            // selKeys moved to Trash this round
+
+        // How many items each channel pulls at a time
+        const PULL_SIZES = { main: 15, simon: 8, words: 7, ynm: 15 };
+
+        // 100-round batch tracking (saved on this device so it survives closing the app)
+        const BATCH_SIZE = 100;
+        const BATCH_STORAGE_KEY = 'simonEmojis.batch.v2';
+        let batch = null;   // set by emptyBatch()/loadBatch() below
+        let openProbableGroups = new Set();  // which channels have their probable list expanded
 
         function getRandomItems(array, count) {
             const copy = [...array];
@@ -1408,14 +1725,18 @@
         }
 
         function generate() {
-            selectedEmojis = getRandomItems(getAllKeys(), 15);
-            simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, 8);
-            selectedWords = getRandomItems(WORD_BANK, 7);
-            // Clear sort bins + groups + yes/no/maybe on regenerate (fresh slate per pull)
+            selectedEmojis = getRandomItems(getAllKeys(), PULL_SIZES.main);
+            simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, PULL_SIZES.simon);
+            selectedWords = getRandomItems(WORD_BANK, PULL_SIZES.words);
+            // Clear sort bins + groups + yes/no/maybe + trash + row notes (fresh slate per pull)
             currentBins = { relevant: [], tbd: [], noise: [] };
             similarityGroups = [];
             selectedForGrouping.clear();
             yesNoMaybeItems = [];
+            trashed.clear();
+            itemNotes = {};
+            renderTrash();
+            recordRound({ main: selectedEmojis, simon: simonEmojis, words: selectedWords });
             displayEmojis();
             displayWords();
             renderBins();
@@ -1432,30 +1753,460 @@
             document.getElementById('results').classList.remove('hidden');
         }
 
-        // Drop group selections tied to a pool's old indices, then refresh group UI
+        // Forget a pool's old group selections, trash, and row notes (its items are being replaced)
         function clearPoolSelections(pool) {
-            Array.from(selectedForGrouping).forEach(k => {
-                if (k.startsWith(pool + ':')) selectedForGrouping.delete(k);
-            });
+            const prefix = pool + ':';
+            Array.from(selectedForGrouping).forEach(k => { if (k.startsWith(prefix)) selectedForGrouping.delete(k); });
+            Array.from(trashed).forEach(k => { if (k.startsWith(prefix)) trashed.delete(k); });
+            Object.keys(itemNotes).forEach(k => { if (k.startsWith(prefix)) delete itemNotes[k]; });
             updateGroupButton();
+            renderTrash();
         }
 
         function regenerateMain() {
-            selectedEmojis = getRandomItems(getAllKeys(), 15);
+            selectedEmojis = getRandomItems(getAllKeys(), PULL_SIZES.main);
             clearPoolSelections('main');
+            recordRound({ main: selectedEmojis });
             displayEmojis();
         }
 
         function regenerateSimon() {
-            simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, 8);
+            simonEmojis = getRandomItems(SIMON_CHANNEL_KEYS, PULL_SIZES.simon);
             clearPoolSelections('simon');
+            recordRound({ simon: simonEmojis });
             displayEmojis();
         }
 
         function regenerateWords() {
-            selectedWords = getRandomItems(WORD_BANK, 7);
+            selectedWords = getRandomItems(WORD_BANK, PULL_SIZES.words);
             clearPoolSelections('words');
+            recordRound({ words: selectedWords });
             displayWords();
+        }
+
+        // ============ 100-ROUND REPEAT TRACKING ============
+        // Every channel keeps its OWN tally. An emoji that shows up in Emojis and in
+        // Simon's Channel is not a repeat — repeats only count inside one channel.
+        const CHANNEL_IDS = ['main', 'simon', 'words', 'ynm'];
+        const CHANNELS = {
+            main:  { label: 'Emojis',           poolSize: () => getAllKeys().length },
+            simon: { label: "Simon's Channel",  poolSize: () => SIMON_CHANNEL_KEYS.length },
+            words: { label: 'Words',            poolSize: () => WORD_BANK.length },
+            ynm:   { label: 'Yes / No / Maybe', poolSize: () => YES_NO_MAYBE_POOL.length }
+        };
+
+        function emptyBatch() {
+            return {
+                v: 2,
+                round: 0,
+                pulls: { main: 0, simon: 0, words: 0, ynm: 0 },    // times each channel was pulled
+                hits:  { main: {}, simon: {}, words: {}, ynm: {} }  // channel -> { itemKey: [round, round, ...] }
+            };
+        }
+        batch = emptyBatch();
+
+        function isValidBatch(b) {
+            if (!b || b.v !== 2 || !Number.isInteger(b.round) || b.round < 0 || b.round > BATCH_SIZE) return false;
+            if (!b.pulls || !b.hits) return false;
+            return CHANNEL_IDS.every(ch =>
+                Number.isInteger(b.pulls[ch]) && b.pulls[ch] >= 0 && b.pulls[ch] <= b.round &&
+                b.hits[ch] && typeof b.hits[ch] === 'object' &&
+                Object.values(b.hits[ch]).every(r => Array.isArray(r) && r.every(Number.isInteger)));
+        }
+
+        function loadBatch() {
+            try {
+                localStorage.removeItem('simonEmojis.batch.v1');  // old 10-round format
+                const raw = localStorage.getItem(BATCH_STORAGE_KEY);
+                if (raw) {
+                    const b = JSON.parse(raw);
+                    if (isValidBatch(b)) batch = b;
+                }
+            } catch (e) { /* storage unavailable — tracking still works for this session */ }
+        }
+
+        function saveBatch() {
+            try { localStorage.setItem(BATCH_STORAGE_KEY, JSON.stringify(batch)); } catch (e) {}
+        }
+
+        // Every generation (full Generate, any section Regen, Y/N/M) is one round.
+        // `pulled` lists only the channels pulled this round: { main: [keys], words: [...] }
+        // After round 100, the next generation wipes the tally and starts round 1 of a new batch.
+        function recordRound(pulled) {
+            disarmRestart();
+            if (batch.round >= BATCH_SIZE) batch = emptyBatch();
+            batch.round += 1;
+            Object.entries(pulled).forEach(([ch, keys]) => {
+                batch.pulls[ch] += 1;
+                const tally = batch.hits[ch];
+                keys.forEach(k => {
+                    if (!tally[k]) tally[k] = [];
+                    tally[k].push(batch.round);
+                });
+            });
+            saveBatch();
+            renderRoundBar();
+            renderRepeats();
+        }
+
+        // In-app messages (phones can silently block alert/confirm pop-ups in home-screen apps)
+        let toastTimer = null;
+        function showToast(msg, ms = 3500) {
+            const t = document.getElementById('toast');
+            if (!t) return;
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => t.classList.remove('show'), ms);
+        }
+
+        // New batch: first tap arms the button, second tap (within 4s) clears the tally
+        let restartArmed = false, restartTimer = null;
+        function disarmRestart() {
+            restartArmed = false;
+            clearTimeout(restartTimer);
+            const btn = document.getElementById('restart-batch-btn');
+            if (btn) { btn.textContent = '↺ New batch'; btn.classList.remove('armed'); }
+        }
+
+        function restartBatch() {
+            if (batch.round === 0) return;
+            if (!restartArmed) {
+                restartArmed = true;
+                const btn = document.getElementById('restart-batch-btn');
+                if (btn) { btn.textContent = 'Tap again to clear'; btn.classList.add('armed'); }
+                restartTimer = setTimeout(disarmRestart, 4000);
+                return;
+            }
+            disarmRestart();
+            batch = emptyBatch();
+            saveBatch();
+            renderRoundBar();
+            renderRepeats();
+            showToast(`New batch started · round 0/${BATCH_SIZE}`);
+        }
+
+        function renderRoundBar() {
+            const pill = document.getElementById('round-pill');
+            const restart = document.getElementById('restart-batch-btn');
+            if (!pill) return;
+            if (batch.round === 0) {
+                pill.textContent = `Round 0/${BATCH_SIZE} · first pull starts a batch`;
+            } else if (batch.round >= BATCH_SIZE) {
+                pill.textContent = `Round ${batch.round}/${BATCH_SIZE} · export now — next pull starts fresh`;
+            } else {
+                pill.textContent = `Round ${batch.round}/${BATCH_SIZE}`;
+            }
+            if (restart) restart.style.display = batch.round > 0 ? '' : 'none';
+        }
+
+        // ---------- Anomaly math ----------
+        // Each pull of a channel draws `pullSize` different items from a pool of `poolSize`,
+        // so any one item has a pullSize/poolSize chance of appearing per pull.
+        // tailProb = chance ONE specific item shows up at least `hits` times in `pulls` pulls.
+        function tailProb(pulls, hits, p) {
+            if (hits <= 0) return 1;
+            if (hits > pulls || p <= 0) return 0;
+            if (p >= 1) return 1;
+            const logRatio = Math.log(p / (1 - p));
+            let logPmf = pulls * Math.log(1 - p);   // chance of 0 hits
+            let sum = 0;
+            for (let i = 0; i <= pulls; i++) {
+                if (i > 0) logPmf += Math.log((pulls - i + 1) / i) + logRatio;
+                if (i >= hits) sum += Math.exp(logPmf);
+            }
+            return Math.min(1, sum);
+        }
+
+        // Chance that ANY item in the channel's pool would repeat this many times by now, by luck alone.
+        // Bigger pool, fewer pulls, or more repeats => smaller chance => bigger anomaly.
+        function anomalyOdds(ch, hitCount) {
+            const pulls = batch.pulls[ch];
+            const poolSize = CHANNELS[ch].poolSize();
+            const p = Math.min(1, PULL_SIZES[ch] / poolSize);
+            const one = Math.min(tailProb(pulls, hitCount, p), 1 - 1e-15);
+            return -Math.expm1(poolSize * Math.log1p(-one));   // 1 - (1 - one)^poolSize
+        }
+
+        const ANOMALY_LEVELS = [
+            { id: 'extreme',    below: 0.01,     icon: '🤯', label: "what's going on" },
+            { id: 'improbable', below: 0.10,     icon: '🧐', label: 'improbable' },
+            { id: 'somewhat',   below: 0.50,     icon: '🤔', label: 'somewhat improbable' },
+            { id: 'probable',   below: Infinity, icon: '🫡', label: 'probable' }
+        ];
+        function levelFor(odds) { return ANOMALY_LEVELS.find(l => odds < l.below); }
+
+        function formatOdds(odds) {
+            if (odds >= 0.5) return 'expected by chance';
+            const n = 1 / odds;
+            const nice = (x) => x >= 100 ? Math.round(x).toLocaleString() : x.toFixed(x < 10 ? 1 : 0);
+            if (n >= 1e12) return '~1 in trillions+';
+            if (n >= 1e9) return `~1 in ${(n / 1e9).toFixed(1)} billion`;
+            if (n >= 1e6) return `~1 in ${(n / 1e6).toFixed(1)} million`;
+            return `~1 in ${nice(n)}`;
+        }
+
+        function channelRepeats(ch) {
+            const memo = {};   // odds only depend on the hit count
+            return Object.entries(batch.hits[ch])
+                .filter(([, rounds]) => rounds.length >= 2)
+                .map(([key, rounds]) => {
+                    const n = rounds.length;
+                    if (memo[n] === undefined) memo[n] = anomalyOdds(ch, n);
+                    return { key, rounds, odds: memo[n], level: levelFor(memo[n]) };
+                })
+                .sort((a, b) => a.odds - b.odds || b.rounds.length - a.rounds.length);
+        }
+
+        function isWordItem(ch, key) {
+            return ch === 'words' || (ch === 'ynm' && /[A-Za-z]/.test(key));
+        }
+
+        function trackedLabelHTML(ch, key) {
+            if (isWordItem(ch, key)) return `<span class="rep-word">${escapeHtml(key)}</span>`;
+            if (isGenmoji(key) && GENMOJI_DATABASE[key]) {
+                return `<img src="${GENMOJI_DATABASE[key].image}" class="genmoji-img-bin"> <span class="rep-name">${GENMOJI_DATABASE[key].name}</span>`;
+            }
+            const name = EMOJI_DATABASE[key];
+            return `<span class="chip-emoji">${key}</span>${name ? ` <span class="rep-name">${name}</span>` : ''}`;
+        }
+
+        function trackedLabelText(ch, key) {
+            if (isWordItem(ch, key)) return key;
+            if (isGenmoji(key) && GENMOJI_DATABASE[key]) return `[${GENMOJI_DATABASE[key].name}]`;
+            return EMOJI_DATABASE[key] ? `${key} ${EMOJI_DATABASE[key]}` : key;
+        }
+
+        function repeatRowHTML(ch, r) {
+            return `
+                <div class="rep-row lvl-${r.level.id}">
+                    <div class="rep-main">${trackedLabelHTML(ch, r.key)}<span class="rep-count">×${r.rounds.length}</span></div>
+                    <div class="rep-meta"><span class="lvl-chip lvl-chip-${r.level.id}">${r.level.icon} ${r.level.label}</span><span class="rep-odds">${formatOdds(r.odds)}</span></div>
+                    <div class="rep-detail">in ${r.rounds.length} of ${batch.pulls[ch]} pulls · rounds ${r.rounds.join(', ')}</div>
+                </div>`;
+        }
+
+        function renderRepeats() {
+            const body = document.getElementById('repeats-body');
+            const summary = document.getElementById('repeats-summary');
+            if (!body) return;
+            if (batch.round === 0) {
+                if (summary) summary.textContent = '🔁 Repeats';
+                body.innerHTML = `<div class="bin-empty">Repeats across your next ${BATCH_SIZE} pulls show up here</div>`;
+                return;
+            }
+            let total = 0, unusual = 0, html = '';
+            CHANNEL_IDS.forEach(ch => {
+                const list = channelRepeats(ch);
+                if (list.length === 0) return;
+                total += list.length;
+                const odd = list.filter(r => r.level.id !== 'probable');
+                const normal = list.filter(r => r.level.id === 'probable');
+                unusual += odd.length;
+                html += `<div class="rep-group-title">${CHANNELS[ch].label} · ${batch.pulls[ch]} pulls · pool of ${CHANNELS[ch].poolSize().toLocaleString()}</div>`;
+                html += odd.map(r => repeatRowHTML(ch, r)).join('');
+                if (normal.length) {
+                    html += `<details class="probable-group" data-ch="${ch}"${openProbableGroups.has(ch) ? ' open' : ''}>
+                        <summary>🫡 ${normal.length} probable repeat${normal.length === 1 ? '' : 's'}</summary>
+                        ${normal.map(r => repeatRowHTML(ch, r)).join('')}
+                    </details>`;
+                }
+            });
+            if (summary) {
+                summary.textContent = total === 0
+                    ? '🔁 Repeats'
+                    : `🔁 Repeats · ${unusual} anomal${unusual === 1 ? 'y' : 'ies'} · ${total} total`;
+            }
+            if (total === 0) {
+                body.innerHTML = '<div class="bin-empty">No repeats yet this batch</div>';
+                return;
+            }
+            body.innerHTML = '<div class="rep-legend">🫡 probable · 🤔 somewhat improbable · 🧐 improbable · 🤯 what\'s going on</div>' + html;
+            body.querySelectorAll('details.probable-group').forEach(d => {
+                d.addEventListener('toggle', () => {
+                    if (d.open) openProbableGroups.add(d.dataset.ch); else openProbableGroups.delete(d.dataset.ch);
+                });
+            });
+        }
+
+        function getRepeatsText() {
+            const parts = [];
+            CHANNEL_IDS.forEach(ch => {
+                const list = channelRepeats(ch);
+                if (list.length === 0) return;
+                const lines = list.map(r =>
+                    `${trackedLabelText(ch, r.key)} ×${r.rounds.length} — ${r.level.icon} ${r.level.label} (${formatOdds(r.odds)}) · rounds ${r.rounds.join(', ')}`);
+                parts.push(`${CHANNELS[ch].label} (${batch.pulls[ch]} pulls · pool of ${CHANNELS[ch].poolSize().toLocaleString()}):\n` + lines.join('\n'));
+            });
+            return parts.join('\n\n');
+        }
+
+        function copyRepeats(btn) {
+            const body = getRepeatsText();
+            const text = batch.round === 0
+                ? 'No rounds yet'
+                : `Repeats — Round ${batch.round}/${BATCH_SIZE}\n\n` + (body || 'No repeats yet this batch');
+            copyText(text).then(() => flashCopied(btn));
+        }
+
+        // ---------- Export / import the repeats tally ----------
+        // The file holds the current batch only (at most rounds 1–100). Importing it puts you
+        // back on that same round, so a 90-round file leaves 10 rounds before a new batch.
+        function exportRepeats() {
+            if (batch.round === 0) { showToast('Nothing to export yet — pull at least once first.'); return; }
+            const payload = { app: 'Simon_Emojis', kind: 'repeats', exportedAt: new Date().toISOString(), batch };
+            const name = `simon-repeats-round-${batch.round}-${new Date().toISOString().slice(0, 10)}.json`;
+            const file = new File([JSON.stringify(payload)], name, { type: 'application/json' });
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                navigator.share({ files: [file], title: name }).catch(() => {});
+                return;
+            }
+            const url = URL.createObjectURL(file);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = name;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 2000);
+        }
+
+        function importRepeats(input) {
+            const f = input.files && input.files[0];
+            input.value = '';
+            if (!f) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                let b;
+                try {
+                    const data = JSON.parse(reader.result);
+                    b = data && data.kind === 'repeats' ? data.batch : null;
+                } catch (e) { b = null; }
+                if (!isValidBatch(b)) {
+                    showToast("That file doesn't look like a Simon Emojis repeats export.", 4500);
+                    return;
+                }
+                disarmRestart();
+                batch = b;
+                saveBatch();
+                renderRoundBar();
+                renderRepeats();
+                showToast(b.round >= BATCH_SIZE
+                    ? `Imported round ${b.round}/${BATCH_SIZE} · your next pull starts a new batch`
+                    : `Imported · round ${b.round}/${BATCH_SIZE}, ${BATCH_SIZE - b.round} rounds left`, 4500);
+            };
+            reader.readAsText(f);
+        }
+
+        // ============ NOTES (kept per item so re-renders don't wipe them) ============
+        function noteSuffix(selKey) {
+            const n = (itemNotes[selKey] || '').trim();
+            return n ? ' — ' + n : '';
+        }
+
+        function appendNoteAndTrash(row, selKey) {
+            const [pool, idx] = selKey.split(':');
+            const noteInput = document.createElement('textarea');
+            noteInput.className = 'emoji-note-input';
+            noteInput.rows = 1;
+            noteInput.id = `note-${pool}-${idx}`;
+            noteInput.value = itemNotes[selKey] || '';
+            noteInput.addEventListener('input', () => {
+                itemNotes[selKey] = noteInput.value;
+                autoGrow(noteInput);
+            });
+            row.appendChild(noteInput);
+
+            const trashBtn = document.createElement('button');
+            trashBtn.className = 'row-trash-btn';
+            trashBtn.setAttribute('aria-label', 'Move to trash');
+            trashBtn.textContent = '×';
+            trashBtn.onclick = (e) => { e.stopPropagation(); trashItem(selKey); };
+            row.appendChild(trashBtn);
+        }
+
+        // Resize restored notes once the rows are on screen
+        function growNotes(container) {
+            if (!container) return;
+            container.querySelectorAll('textarea.emoji-note-input').forEach(t => {
+                if (t.value && t.offsetParent !== null) autoGrow(t);
+            });
+        }
+
+        function emptyPoolHint(grid, total, shown) {
+            if (total > 0 && shown === 0) {
+                grid.innerHTML = '<div class="bin-empty">Everything here is in the Trash — tap ↩ there to bring one back</div>';
+            }
+        }
+
+        // ============ TRASH ============
+        function itemForSelKey(selKey) {
+            const [pool, idxStr] = selKey.split(':');
+            const idx = parseInt(idxStr, 10);
+            if (pool === 'main') return { item: selectedEmojis[idx], type: 'emoji' };
+            if (pool === 'simon') return { item: simonEmojis[idx], type: 'emoji' };
+            if (pool === 'words') return { item: selectedWords[idx], type: 'word' };
+            if (pool === 'ynm' && yesNoMaybeItems[idx]) {
+                const it = yesNoMaybeItems[idx].item;
+                return { item: it, type: EMOJI_DATABASE.hasOwnProperty(it) ? 'emoji' : 'word' };
+            }
+            return null;
+        }
+
+        function rerenderPool(pool) {
+            if (pool === 'main' || pool === 'simon') displayEmojis();
+            else if (pool === 'words') displayWords();
+            else if (pool === 'ynm') renderYesNoMaybe();
+        }
+
+        function trashItem(selKey) {
+            trashed.add(selKey);
+            selectedForGrouping.delete(selKey);
+            updateGroupButton();
+            rerenderPool(selKey.split(':')[0]);
+            renderTrash();
+        }
+
+        function restoreItem(selKey) {
+            trashed.delete(selKey);
+            rerenderPool(selKey.split(':')[0]);
+            renderTrash();
+        }
+
+        const POOL_LABELS = { main: 'Emojis', simon: 'Simon', words: 'Words', ynm: 'Y/N/M' };
+
+        function renderTrash() {
+            const box = document.getElementById('trash-container');
+            const count = document.getElementById('trash-count');
+            if (!box) return;
+            if (count) count.textContent = trashed.size ? `(${trashed.size})` : '';
+            box.innerHTML = '';
+            if (trashed.size === 0) {
+                box.innerHTML = '<div class="bin-empty">Tap × on any row to move it here</div>';
+                return;
+            }
+            trashed.forEach(selKey => {
+                const it = itemForSelKey(selKey);
+                if (!it || it.item === undefined) return;
+                const chip = document.createElement('div');
+                chip.className = 'bin-chip trash-chip';
+                let label;
+                if (it.type === 'emoji') {
+                    label = isGenmoji(it.item)
+                        ? `<img src="${GENMOJI_DATABASE[it.item].image}" class="genmoji-img-bin"> <span class="chip-label">${GENMOJI_DATABASE[it.item].name}</span>`
+                        : `<span class="chip-emoji">${it.item}</span> <span class="chip-label">${EMOJI_DATABASE[it.item] || ''}</span>`;
+                } else {
+                    label = `<span class="chip-label">${escapeHtml(it.item)}</span>`;
+                }
+                chip.innerHTML = `${label} <span class="trash-pool">${POOL_LABELS[selKey.split(':')[0]] || ''}</span>`;
+                const restoreBtn = document.createElement('button');
+                restoreBtn.className = 'chip-remove trash-restore';
+                restoreBtn.setAttribute('aria-label', 'Restore');
+                restoreBtn.textContent = '↩';
+                restoreBtn.onclick = () => restoreItem(selKey);
+                chip.appendChild(restoreBtn);
+                box.appendChild(chip);
+            });
         }
 
         function clearPrompt() {
@@ -1467,19 +2218,21 @@
             }
         }
 
-        function displayEmojis() {
-            const grid = document.getElementById('emoji-grid');
+        function renderPoolRows(grid, items, pool, builder) {
             grid.innerHTML = '';
-            selectedEmojis.forEach((key, idx) => {
-                grid.appendChild(buildEmojiRow(key, 'main', idx));
+            let shown = 0;
+            items.forEach((item, idx) => {
+                if (trashed.has(`${pool}:${idx}`)) return;
+                grid.appendChild(builder(item, pool, idx));
+                shown++;
             });
+            emptyPoolHint(grid, items.length, shown);
+            growNotes(grid);
+        }
 
-            // Render Simon's channel pool
-            const simonGrid = document.getElementById('simon-grid');
-            simonGrid.innerHTML = '';
-            simonEmojis.forEach((key, idx) => {
-                simonGrid.appendChild(buildEmojiRow(key, 'simon', idx));
-            });
+        function displayEmojis() {
+            renderPoolRows(document.getElementById('emoji-grid'), selectedEmojis, 'main', buildEmojiRow);
+            renderPoolRows(document.getElementById('simon-grid'), simonEmojis, 'simon', buildEmojiRow);
         }
 
         function buildEmojiRow(key, pool, idx) {
@@ -1512,13 +2265,8 @@
             label.onclick = () => openBinPicker(key, pool, 'emoji');
             row.appendChild(label);
 
-            // Right side: note input
-            const noteInput = document.createElement('textarea');
-            noteInput.className = 'emoji-note-input';
-            noteInput.rows = 1;
-            noteInput.id = `note-${pool}-${idx}`;
-            noteInput.addEventListener('input', () => autoGrow(noteInput));
-            row.appendChild(noteInput);
+            // Right side: note input + trash button
+            appendNoteAndTrash(row, selKey);
 
             return row;
         }
@@ -1549,13 +2297,8 @@
             label.onclick = () => openBinPicker(word, pool, 'word');
             row.appendChild(label);
 
-            // Right side: note input
-            const noteInput = document.createElement('textarea');
-            noteInput.className = 'emoji-note-input';
-            noteInput.rows = 1;
-            noteInput.id = `note-${pool}-${idx}`;
-            noteInput.addEventListener('input', () => autoGrow(noteInput));
-            row.appendChild(noteInput);
+            // Right side: note input + trash button
+            appendNoteAndTrash(row, selKey);
 
             return row;
         }
@@ -1568,18 +2311,13 @@
         function displayWords() {
             const grid = document.getElementById('words-grid');
             if (!grid) return;
-            grid.innerHTML = '';
-            selectedWords.forEach((word, idx) => {
-                grid.appendChild(buildWordRow(word, 'words', idx));
-            });
+            renderPoolRows(grid, selectedWords, 'words', buildWordRow);
         }
 
         function getWordsListText() {
-            return selectedWords.map((word, idx) => {
-                const noteEl = document.getElementById(`note-words-${idx}`);
-                const note = noteEl && noteEl.value.trim() ? ' — ' + noteEl.value.trim() : '';
-                return `${word}${note}`;
-            }).join('\n');
+            return selectedWords
+                .map((word, idx) => trashed.has('words:' + idx) ? null : `${word}${noteSuffix('words:' + idx)}`)
+                .filter(x => x !== null).join('\n');
         }
 
         function copyWordsList(btn) {
@@ -1588,10 +2326,10 @@
 
         // ============ YES / NO / MAYBE ============
         function generateYesNoMaybe() {
-            yesNoMaybeItems = getRandomItems(YES_NO_MAYBE_POOL, 15);
-            selectedForGrouping.clear();  // visual reset of group checks that may reference stale ynm indices
+            yesNoMaybeItems = getRandomItems(YES_NO_MAYBE_POOL, PULL_SIZES.ynm);
+            clearPoolSelections('ynm');  // only drop this section's selections/trash/notes
+            recordRound({ ynm: yesNoMaybeItems.map(e => e.item) });
             renderYesNoMaybe();
-            renderGroups();
         }
 
         function renderYesNoMaybe() {
@@ -1613,7 +2351,10 @@
             });
             counts.innerHTML = `<span class="count-pill count-yes">✓ ${yesN} yes</span><span class="count-pill count-no">✗ ${noN} no</span><span class="count-pill count-gray">🤷 ${grayN} gray</span>`;
 
+            let ynmShown = 0;
             yesNoMaybeItems.forEach((entry, idx) => {
+                if (trashed.has('ynm:' + idx)) return;
+                ynmShown++;
                 const row = document.createElement('div');
                 row.className = 'emoji-row ynm-row ynm-' + entry.tag;
                 const selKey = `ynm:${idx}`;
@@ -1640,15 +2381,12 @@
                 label.onclick = () => openBinPicker(entry.item, 'ynm', isEmojiItem ? 'emoji' : 'word');
                 row.appendChild(label);
 
-                const noteInput = document.createElement('textarea');
-                noteInput.className = 'emoji-note-input';
-                noteInput.rows = 1;
-                noteInput.id = `note-ynm-${idx}`;
-                noteInput.addEventListener('input', () => autoGrow(noteInput));
-                row.appendChild(noteInput);
+                appendNoteAndTrash(row, selKey);
 
                 grid.appendChild(row);
             });
+            emptyPoolHint(grid, yesNoMaybeItems.length, ynmShown);
+            growNotes(grid);
         }
 
         function getYnmListText() {
@@ -1661,13 +2399,12 @@
             });
             const header = `(${yesN} yes · ${noN} no · ${grayN} gray)`;
             const lines = yesNoMaybeItems.map((entry, idx) => {
-                const noteEl = document.getElementById(`note-ynm-${idx}`);
-                const note = noteEl && noteEl.value.trim() ? ' — ' + noteEl.value.trim() : '';
+                if (trashed.has('ynm:' + idx)) return null;
                 const label = EMOJI_DATABASE.hasOwnProperty(entry.item)
                     ? `${entry.item} ${EMOJI_DATABASE[entry.item]}`
                     : entry.item;
-                return `[${entry.tag}] ${label}${note}`;
-            });
+                return `[${entry.tag}] ${label}${noteSuffix('ynm:' + idx)}`;
+            }).filter(x => x !== null);
             return header + '\n' + lines.join('\n');
         }
 
@@ -1815,12 +2552,27 @@
             return out;
         }
 
+        // "Group these" opens an in-app naming sheet (no browser pop-up)
         function createGroupFromSelection() {
+            if (resolveSelectedItems().length < 2) return;
+            const input = document.getElementById('group-name-input');
+            input.value = `Group ${similarityGroups.length + 1}`;
+            document.getElementById('group-namer').classList.add('open');
+            document.getElementById('group-overlay').classList.add('open');
+            setTimeout(() => { input.focus(); input.select(); }, 50);
+        }
+
+        function closeGroupNamer() {
+            document.getElementById('group-namer').classList.remove('open');
+            document.getElementById('group-overlay').classList.remove('open');
+        }
+
+        function saveGroupName() {
             const items = resolveSelectedItems();
+            const input = document.getElementById('group-name-input');
+            closeGroupNamer();
             if (items.length < 2) return;
-            const name = prompt('Name this group:', `Group ${similarityGroups.length + 1}`);
-            if (name === null) return;  // user cancelled
-            const trimmed = name.trim() || `Group ${similarityGroups.length + 1}`;
+            const trimmed = input.value.trim() || `Group ${similarityGroups.length + 1}`;
             similarityGroups.push({ name: trimmed, items });
             selectedForGrouping.clear();
             displayEmojis();
@@ -1902,24 +2654,26 @@
 
         function getListText() {
             return selectedEmojis.map((key, idx) => {
-                const noteEl = document.getElementById(`note-main-${idx}`);
-                const note = noteEl && noteEl.value.trim() ? ' — ' + noteEl.value.trim() : '';
+                const selKey = 'main:' + idx;
+                if (trashed.has(selKey)) return null;
+                const note = noteSuffix(selKey);
                 if (isGenmoji(key)) {
                     return `[${GENMOJI_DATABASE[key].name}]${note}`;
                 }
                 return `${key} ${EMOJI_DATABASE[key]}${note}`;
-            }).join('\n');
+            }).filter(x => x !== null).join('\n');
         }
 
         function getSimonListText() {
             return simonEmojis.map((key, idx) => {
-                const noteEl = document.getElementById(`note-simon-${idx}`);
-                const note = noteEl && noteEl.value.trim() ? ' — ' + noteEl.value.trim() : '';
+                const selKey = 'simon:' + idx;
+                if (trashed.has(selKey)) return null;
+                const note = noteSuffix(selKey);
                 if (isGenmoji(key)) {
                     return `[${GENMOJI_DATABASE[key].name}]${note}`;
                 }
                 return `${key} ${EMOJI_DATABASE[key]}${note}`;
-            }).join('\n');
+            }).filter(x => x !== null).join('\n');
         }
 
         function getNotesText() {
@@ -1977,6 +2731,9 @@
             if (prompt) {
                 out += '--- Prompt ---\n' + prompt + '\n\n';
             }
+            if (batch.round > 0) {
+                out += `--- Round ${batch.round}/${BATCH_SIZE} ---\n\n`;
+            }
             out += '--- Emojis ---\n' + getListText() + '\n\n';
             out += '--- Words ---\n' + getWordsListText() + '\n\n';
             out += "--- Simon's Channel ---\n" + getSimonListText() + '\n\n';
@@ -1995,10 +2752,19 @@
             if (similarityGroups.length > 0) {
                 out += '--- Similarity Groups ---\n' + getGroupsText() + '\n\n';
             }
+            const repeats = getRepeatsText();
+            if (repeats) {
+                out += `--- Repeats (round ${batch.round}/${BATCH_SIZE}) ---\n` + repeats + '\n\n';
+            }
             const notes = getNotesText();
             out += '--- Notes & Quotes ---\n' + (notes || '(empty)') + '\n';
             copyText(out.trim()).then(() => flashCopied(btn));
         }
+
+        // Restore the 10-round batch tally saved on this device
+        loadBatch();
+        renderRoundBar();
+        renderRepeats();
 
         // PWA: Register service worker for offline support
         if ('serviceWorker' in navigator) {
